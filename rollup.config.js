@@ -10,7 +10,7 @@ import typescript from 'rollup-plugin-typescript2'
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
-const production = !process.env.ROLLUP_WATCH
+const { ROLLUP_WATCH, USE_TS, USE_LIVE_RELOAD, USE_POSTCSS } = process.env
 
 export default {
 	input: 'src/main.tsx',
@@ -25,18 +25,19 @@ export default {
 		replace({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 		}),
-		typescript(),
 		babel({
 			exclude: 'node_modules/**',
 			babelrc: false,
 			presets: ['@babel/preset-env', '@babel/preset-react'],
 		}),
-		postcss({
-			plugins: [],
-		}),
 		commonjs({ include: 'node_modules/**' }), // converts date-fns to ES modules
 
-		production && terser(), // minify, but only in production
-		!production && livereload(),
+		ROLLUP_WATCH && terser(), // minify, but only in production
+		USE_LIVE_RELOAD && livereload(),
+		USE_TS && typescript(),
+		USE_POSTCSS &&
+			postcss({
+				plugins: [],
+			}),
 	],
 }

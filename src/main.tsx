@@ -7,6 +7,6 @@ import './main.css'
 // logs will still point to your original source modules
 console.log('if you have sourcemaps enabled in your devtools, click on main.js:5 -->')
 
-const App = () => <div>hello, react</div>
+const App = () => <div>hello world</div>
 
 ReactDOM.render(<App />, document.getElementById('root'))
