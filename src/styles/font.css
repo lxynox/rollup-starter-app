@@ -1,0 +1,23 @@
+:root {
+	--alpha-font-size: 2rem; /** 32px **/
+	--beta-font-size: 1.5rem; /** 24px **/
+	--gamma-font-size: 1.125rem; /** 18px **/
+	--delta-font-size: 1rem; /** 16px **/
+	--epsilon-font-size: 0.875rem; /** 14px **/
+	--zeta-font-size: 0.75rem; /** 12px **/
+	--small-font-size: 0.625rem; /** 10px **/
+
+	--alpha-line-height: 2.5rem; /** 40px **/
+	--beta-line-height: 2rem; /** 32px **/
+	--gamma-line-height: 1.5rem; /** 24px **/
+	--delta-line-height: 1.5rem; /** 24px **/
+	--epsilon-line-height: 1.5rem; /** 24px **/
+	--zeta-line-height: 1.5rem; /** 24px **/
+	--small-line-height: 1rem; /** 16px **/
+
+	--base-font-size: 1em;
+	--base-line-height: 1.5rem;
+
+	--serif-font: 'Domaine Display', 'Domaine Text', serif;
+	--sans-serif-font: 'Open Sans', sans-serif;
+}

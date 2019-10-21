@@ -6,7 +6,11 @@ import progress from 'rollup-plugin-progress'
 import replace from 'rollup-plugin-replace'
 import livereload from 'rollup-plugin-livereload'
 import postcss from 'rollup-plugin-postcss'
+import postcssImport from 'postcss-import'
+import postcssPresetEnv from 'postcss-preset-env'
+import cssnano from 'cssnano'
 import typescript from 'rollup-plugin-typescript2'
+import json from 'rollup-plugin-json'
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -20,6 +24,7 @@ export default {
 		sourcemap: true,
 	},
 	plugins: [
+		json(),
 		progress(),
 		resolve(), // tells Rollup how to find date-fns in node_modules
 		replace({
@@ -37,7 +42,13 @@ export default {
 		USE_TS && typescript(),
 		USE_POSTCSS &&
 			postcss({
-				plugins: [],
+				plugins: [
+					postcssImport(),
+					postcssPresetEnv({
+						stage: 1,
+					}),
+					cssnano(),
+				],
 			}),
 	],
 }

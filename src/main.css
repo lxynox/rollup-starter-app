@@ -1,4 +1,13 @@
+@import './styles';
+
 body {
-  color: magenta;
-  font-size: 2em;
+	color: var(--primary-brand);
+	font-size: calc(var(--spacing) * 2);
+}
+
+@media (--tablet) {
+	body {
+		color: var(--secondary-brand);
+		font-size: 2rem;
+	}
 }

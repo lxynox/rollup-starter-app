@@ -1,0 +1,18 @@
+:root {
+	--secondary-brand: #00859c;
+	--primary-brand: #7d3f98;
+
+	--black: #000000;
+	--dark-gray: #5a6870;
+	--light-gray: #fafbfc;
+	--med-gray: #eaeced;
+	--gray: #cacbcc;
+	--white: #ffffff;
+
+	/* UTILITIES */
+	--error: #e74c3c;
+	--info: #3498db;
+	--success: #27ae60;
+	--warning: #ffc107;
+	--overlay: rgba(0, 0, 0, 0.2);
+}

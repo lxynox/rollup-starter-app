@@ -1,0 +1,4 @@
+:root {
+	--spacing: 0.5rem;
+	--half-spacing: calc(var(--spacing-unit) / 2);
+}
