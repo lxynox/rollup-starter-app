@@ -54,7 +54,7 @@ export default {
 			},
 		}),
 
-		ROLLUP_WATCH && terser(), // minify, but only in production
+		!ROLLUP_WATCH && terser(), // minify, but only in production
 		USE_LIVE_RELOAD && livereload(),
 		USE_TS && typescript(),
 		USE_POSTCSS &&
