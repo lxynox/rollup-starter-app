@@ -35,7 +35,24 @@ export default {
 			babelrc: false,
 			presets: ['@babel/preset-env', '@babel/preset-react'],
 		}),
-		commonjs({ include: 'node_modules/**' }), // converts date-fns to ES modules
+		// converts date-fns to ES modules
+		// https://github.com/reduxjs/react-redux/issues/643#issuecomment-285008041
+		commonjs({
+			include: 'node_modules/**',
+			namedExports: {
+				'node_modules/react/index.js': [
+					'useContext',
+					'useState',
+					'useEffect',
+					'useReducer',
+					'createContext',
+					'createElement',
+					'forwardRef',
+					'Component',
+					'Fragment',
+				],
+			},
+		}),
 
 		ROLLUP_WATCH && terser(), // minify, but only in production
 		USE_LIVE_RELOAD && livereload(),
