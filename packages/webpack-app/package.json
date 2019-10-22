@@ -1,0 +1,15 @@
+{
+	"name": "webpack-app",
+	"version": "0.0.1",
+	"main": "src/main.js",
+	"license": "MIT",
+	"scripts": {
+		"watch": "webpack-config watch",
+		"build": "webpack-config build",
+		"start": "serve dist"
+	},
+	"dependencies": {
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2"
+	}
+}
