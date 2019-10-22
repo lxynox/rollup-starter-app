@@ -6,11 +6,11 @@ import progress from 'rollup-plugin-progress'
 import replace from 'rollup-plugin-replace'
 import livereload from 'rollup-plugin-livereload'
 import postcss from 'rollup-plugin-postcss'
+import typescript from 'rollup-plugin-typescript2'
+import json from 'rollup-plugin-json'
 import postcssImport from 'postcss-import'
 import postcssPresetEnv from 'postcss-preset-env'
 import cssnano from 'cssnano'
-import typescript from 'rollup-plugin-typescript2'
-import json from 'rollup-plugin-json'
 
 // `npm run build` -> `production` is true
 // `npm run dev` -> `production` is false
@@ -31,16 +31,16 @@ export default {
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 		}),
 		babel({
-			exclude: 'node_modules/**',
+			exclude: /node_modules/,
 			babelrc: false,
 			presets: ['@babel/preset-env', '@babel/preset-react'],
 		}),
 		// converts date-fns to ES modules
 		// https://github.com/reduxjs/react-redux/issues/643#issuecomment-285008041
 		commonjs({
-			include: 'node_modules/**',
+			include: /node_modules/,
 			namedExports: {
-				'node_modules/react/index.js': [
+				react: [
 					'useContext',
 					'useState',
 					'useEffect',

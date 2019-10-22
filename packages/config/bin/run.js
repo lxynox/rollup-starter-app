@@ -1,4 +1,7 @@
+#!/usr/bin/env node
+
 const { spawn } = require('child_process')
+const resolve = (...path) => require('path').resolve(__dirname, ...path)
 const program = require('commander')
 
 program.version('0.0.1')
@@ -12,7 +15,7 @@ program
 		const env = { ...process.env }
 		if (options.typescript) env.USE_TS = true
 		if (options.postcss) env.USE_POSTCSS = true
-		spawn('rollup', ['-c'], { env })
+		spawn('rollup', ['-c', resolve('../rollup.config.js')], { env })
 	})
 
 program
@@ -26,7 +29,7 @@ program
 		if (options.typescript) env.USE_TS = true
 		if (options.liveReload) env.USE_LIVE_RELOAD = true
 		if (options.postcss) env.USE_POSTCSS = true
-		spawn('rollup', ['-c', '-w'], { env, stdio: 'inherit' })
+		spawn('rollup', ['-c', resolve('../rollup.config.js'), '-w'], { env, stdio: 'inherit' })
 	})
 
 program.command('*').action(function(env) {
