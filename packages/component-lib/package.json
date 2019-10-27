@@ -1,0 +1,16 @@
+{
+	"name": "component-lib",
+	"version": "0.0.1",
+	"scripts": {
+		"prepare": "microbundle --no-compress --jsx React.createElement",
+		"watch": "microbundle watch --no-compress --jsx React.createElement"
+	},
+	"dependencies": {
+		"@emotion/styled": "^10.0.17",
+		"@styled-system/color": "^5.1.2",
+		"@styled-system/css": "^5.0.23",
+		"@styled-system/should-forward-prop": "^5.1.2",
+		"@styled-system/space": "^5.1.2",
+		"microbundle": "^0.11.0"
+	}
+}
