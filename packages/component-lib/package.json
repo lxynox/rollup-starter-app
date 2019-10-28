@@ -3,14 +3,29 @@
 	"version": "0.0.1",
 	"scripts": {
 		"prepare": "microbundle --no-compress --jsx React.createElement",
-		"watch": "microbundle watch --no-compress --jsx React.createElement"
+		"watch": "microbundle watch --no-compress --jsx React.createElement",
+		"build": "gatsby build",
+		"clean": "gatsby clean",
+		"docs": "gatsby develop"
 	},
 	"dependencies": {
 		"@emotion/styled": "^10.0.17",
-		"@styled-system/color": "^5.1.2",
-		"@styled-system/css": "^5.0.23",
-		"@styled-system/should-forward-prop": "^5.1.2",
-		"@styled-system/space": "^5.1.2",
-		"microbundle": "^0.11.0"
+		"@primer/components": "^15.0.1",
+		"gatsby": "^2.17.4",
+		"gatsby-theme-documentation": "^0.0.27",
+		"microbundle": "^0.11.0",
+		"styled-system": "^5.1.2"
+	},
+	"devDependencies": {
+		"html-react-parser": "^0.9.1",
+		"react": "16.11.0",
+		"react-dom": "16.11.0",
+		"react-element-to-jsx-string": "^14.1.0",
+		"react-live": "^2.2.1",
+		"styled-components": "^4.4.0"
+	},
+	"resolutions": {
+		"react": "16.11.0",
+		"react-dom": "16.11.0"
 	}
 }
